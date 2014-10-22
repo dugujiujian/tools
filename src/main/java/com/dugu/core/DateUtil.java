@@ -15,9 +15,15 @@ public class DateUtil {
 	public static String today() {
 		return toString(new Date(), FORMAT_FULL);
 	}
-	
-	public static Date addDate(Date date,int amount){
-		if(date==null){
+
+	public static Date long2Date(long timer) {
+		Calendar c = Calendar.getInstance();
+		c.setTimeInMillis(timer);
+		return c.getTime();
+	}
+
+	public static Date addDate(Date date, int amount) {
+		if (date == null) {
 			return null;
 		}
 		Calendar c = Calendar.getInstance();
@@ -25,15 +31,14 @@ public class DateUtil {
 		c.add(Calendar.DAY_OF_MONTH, amount);
 		return c.getTime();
 	}
-	
-	public static Date addDate(String sDate,String format,int amount){
-		Date date=toDate(sDate,format);
-		if(date==null){
+
+	public static Date addDate(String sDate, String format, int amount) {
+		Date date = toDate(sDate, format);
+		if (date == null) {
 			return null;
 		}
-		return addDate(date,amount);
+		return addDate(date, amount);
 	}
-	
 
 	/**
 	 * 将date的时间变成0
