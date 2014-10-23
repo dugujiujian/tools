@@ -7,6 +7,59 @@ import org.junit.Test;
 
 public class DateUtilTest {
 
+	
+	@Test
+	public void testLong2Date() {
+		String now = "2014-10-23 21:21:21";
+		Date datetime = DateUtil.toDate(now, DateUtil.FORMAT_FULL);
+		long millis=datetime.getTime();
+		Date result=DateUtil.long2Date(millis);
+		Assert.assertTrue(result.equals(datetime));
+		
+	}
+	
+	
+	@Test
+	public void testAddDate() {
+		// add
+		String now = "2014-10-22 21:21:21";
+		Date datetime = DateUtil.toDate(now, DateUtil.FORMAT_FULL);
+		Date result=DateUtil.addDate(datetime, 1);
+		Assert.assertEquals("2014-10-23 21:21:21",DateUtil.toString(result, DateUtil.FORMAT_FULL));
+		// sub
+		result=DateUtil.addDate(datetime, -1);
+		Assert.assertEquals("2014-10-21 21:21:21",DateUtil.toString(result, DateUtil.FORMAT_FULL));
+		
+		// string
+		result=DateUtil.addDate(now, DateUtil.FORMAT_FULL,2);
+		Assert.assertEquals("2014-10-24 21:21:21",DateUtil.toString(result, DateUtil.FORMAT_FULL));
+		
+	}
+	
+	@Test
+	public void testAddSecond() {
+		// add
+		String now = "2014-10-23 21:21:21";
+		Date datetime = DateUtil.toDate(now, DateUtil.FORMAT_FULL);
+		Date result=DateUtil.addSecond(datetime, 10);
+		Assert.assertEquals("2014-10-23 21:21:31",DateUtil.toString(result, DateUtil.FORMAT_FULL));
+		// sub
+		result=DateUtil.addSecond(datetime, -10);
+		Assert.assertEquals("2014-10-23 21:21:11",DateUtil.toString(result, DateUtil.FORMAT_FULL));
+	}
+	
+	@Test
+	public void testAddMinute() {
+		// add
+		String now = "2014-10-23 21:21:21";
+		Date datetime = DateUtil.toDate(now, DateUtil.FORMAT_FULL);
+		Date result=DateUtil.addMinute(datetime, 10);
+		Assert.assertEquals("2014-10-23 21:31:21",DateUtil.toString(result, DateUtil.FORMAT_FULL));
+		// sub
+		result=DateUtil.addMinute(datetime, -10);
+		Assert.assertEquals("2014-10-23 21:11:21",DateUtil.toString(result, DateUtil.FORMAT_FULL));
+	}
+	
 	@Test
 	public void testToString() {
 		String date = DateUtil.toString(null, null);
@@ -48,18 +101,7 @@ public class DateUtilTest {
 		int day=DateUtil.getDay(datetime);
 		Assert.assertEquals(21,day);
 	}
-	
-	@Test
-	public void testAddDate() {
-		// normal
-		String now = "2014-10-22 21:21:21";
-		Date datetime = DateUtil.toDate(now, DateUtil.FORMAT_FULL);
-		Date result=DateUtil.addDate(datetime, 1);
-		Assert.assertEquals("2014-10-23 21:21:21",DateUtil.toString(result, DateUtil.FORMAT_FULL));
-		result=DateUtil.addDate(datetime, -1);
-		Assert.assertEquals("2014-10-21 21:21:21",DateUtil.toString(result, DateUtil.FORMAT_FULL));
-		System.err.println(result);
-	}
+
  
  
 
