@@ -9,10 +9,17 @@
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-<context:component-scan base-package="com.dugu.core.rule" /> 
+	<bean id="defaultRuleEngineerExecutor" class="com.dugu.core.rule.DefaultRuleEngineerExecutor">
+		<property name="engineers">
+			<list>
+				 <ref bean="blackUserFilterRule" />
+				  <ref bean="degreeFiltRule" />
+			</list>
+		</property>
+	</bean>
 
-
-
+	<bean id="blackUserFilterRule" class="com.dugu.core.rule.list.BlackUserFilterRule" />
+	<bean id="degreeFiltRule" class="com.dugu.core.rule.list.DegreeFiltRule" />
 
 
 </beans>
