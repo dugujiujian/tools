@@ -15,6 +15,6 @@ public class TestMethodSynchronized extends Thread {
     public void run() {
 
         System.out.println("Thread Name=" + Thread.currentThread().getName());
-        ts.sub();
+        ts.add();
     }
 }

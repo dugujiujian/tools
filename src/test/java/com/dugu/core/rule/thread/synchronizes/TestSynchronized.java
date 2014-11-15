@@ -2,9 +2,6 @@ package com.dugu.core.rule.thread.synchronizes;
 
 public class TestSynchronized {
 
-    private Object    o   = new Object();
-    private Object    o2  = new Object();
-
     public static int num = 0;
 
     public synchronized void add() {

@@ -24,8 +24,8 @@ public class DefaultRuleEngineerExecutor {
             for (IRuleEngineer rule : engineers) {
                 if (!rule.handle(context, param)) {
                     break;
-                }
-            }
+                } 
+            } 
         }
     }
 

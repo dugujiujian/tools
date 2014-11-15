@@ -19,7 +19,7 @@ public class RuleParam {
     }
 
     public int getDegree() {
-        return degree;
+        return degree; 
     }
 
     public void setDegree(int degree) {

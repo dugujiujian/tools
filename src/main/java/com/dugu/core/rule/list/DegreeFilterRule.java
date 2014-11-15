@@ -6,7 +6,7 @@ import com.dugu.core.rule.domain.RuleParam;
 import com.dugu.core.rule.exception.RuleException;
 import com.dugu.core.util.LogUtil;
 
-public class DegreeFiltRule implements IRuleEngineer {
+public class DegreeFilterRule implements IRuleEngineer {
 
     @Override
     public boolean handle(RuleContext context, RuleParam param) throws RuleException {

@@ -10,3 +10,4 @@ public interface IRuleEngineer {
     boolean handle(RuleContext context,RuleParam param) throws RuleException  ;
 
 }
+ 

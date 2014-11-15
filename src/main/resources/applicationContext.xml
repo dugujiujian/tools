@@ -19,7 +19,7 @@
 			<list>
 				<value>classpath*:config.properties</value>
 			</list>
-		</property>
+		</property> 
 	</bean>
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
